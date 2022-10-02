@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+#user-strap {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    height: 4.8vh;
+    color: #918E8E;
+    font-family: 'Inter';
+    font-size: 14px;
+
+}
+
+#user-icons-container {
+    margin-right: 3vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-icon {
+    padding-left: 0.7vw;
+}
+
+#search {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#magnifying-glass {
+    margin-top: 6px;
+    margin-left: -0.5vw;
+}
+
+#user-account-icon {
+    margin-top: 9px;
+    margin-left: -0.2vw;
+}
+
+
+#wishlist-icon {
+    margin-top: 6px;
+}
+
+#shopping-bag {
+    margin-top: 7px;
+}
+
+#navigation-strap {
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+
+}
+#navigation-buttons{
+    display: flex;
+    height: 12vh;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    margin-left: -40vw;
+}
+.navigation-button{
+    padding-right: 6vw;
+}
+#logo{
+    padding-top: 0.3rem;
+}
+#sm-icons-container{
+    margin-right: -55vw;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+#bottom-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: fit-content;
+}
+#slides
+
+#slide1{
+    width: 70vw;
+}
+
+#dots-container{
+    width: 13vw;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position:absolute;
+    margin-top: -2.7vw;
+    margin-left: 28vw;
+
+    
+}
+
+.dot{
+height: 25px;
+width: 25px;
+border-color: rgb(255, 255, 255);
+border-radius: 100%;
+border-style: solid;
+}
+.dot-filled{
+    background-color: rgb(255, 255, 255);
+    height: 25px;
+width: 25px;
+border-color: rgb(255, 255, 255);
+border-radius: 100%;
+border-style: solid;
+}
+ #collection-forwarding-ad-container{
+    margin-top: 5vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+
+ }
+ #collection-ad{
+    width: 60%;
+ }
+ #collection-description-part{
+width: 450px;
+height: px;
+background-color:rgba(61, 44, 44, 1) ;
+display: flex; 
+flex-direction: column;
+align-items: center;}
+
+#forwarding-button{
+    padding: 1rem;
+    padding-left: 4rem;
+    margin-top: 2rem;
+    padding-right: 4rem;
+    border: 3px solid white;
+    color: white;
+    border-radius: 13px;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center}
+
+
+    #collection-ad-text-container{
+        margin-top: 32%;
+           display: flex;
+        justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+}
+#collection-name{
+    font-size: 36px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+#arrows-container{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 70vw;
+    height: fit-content;
+    padding-top:15vw ;}
+
+
+.swiping-arrow{
+    width: 2rem;
+    height: 2rem;
+    background-color: blue;
+}
+
+footer{
+    margin-top: 5vh;
+    display: flex;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    height: 25vh;
+flex-direction: row;
+}
+
+#newsletter-container{
+    padding-top: 1vh;
+    border-radius: 1px;
+    border-color: blue;
+    border: dotted;
+    width: 45vw;
+    height: 100%;
+   padding-left: 5vw;
+   display: flex;
+   flex-direction: column;
+
+}
+#title{
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    
+
+    
+}
+
+#newsletter-description{
+    padding-top: 1vh;
+    font-weight:50;
+    letter-spacing: 2px;
+    line-height: 27px;
+}
+
+#sing-up-button{
+    color: white;
+    background-color: rgba(145, 142, 142, 1);
+    border-radius: 0px;
+    border-color: rgba(255, 255, 255, 0);
+    font-size: 18px;
+    font-weight:50;
+
+    
+}
+#input-container{
+    padding-top: 2.5vh;
+    font-size: 14px;
+}
+#mail-input{
+    height: 3vh;
+    width: 25vw;
+    font-size: 18px;
+    border: 0;
+}
+
+input:focus {
+    outline:none;
+}
+
+#regulamin-container{
+    padding-top: 1vh;
+    border-radius: 1px;
+    border-color: rgb(255, 0, 0);
+    border: dotted;
+    width: 45vw;
+    height: 100%;
+   padding-right: 5vw;
+   display: flex;
+
+}
+
+.kolumna{
+    display: flex;
+    flex-direction: column;
+}
