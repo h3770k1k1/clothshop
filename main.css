@@ -101,121 +101,96 @@ justify-content: flex-end;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: fit-content;
 }
-#slides{
-    height: 400px;
-    width: 70vw;
-    
-}
-.slide{
-    height: 100%;
-    position: relative;
-    border: 3px solid green;
 
-}
-#slide1{
+#slides-container{
     width: 70vw;
-    position: absolute;
-    z-index: -5;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #dots-container{
-    border: 2px solid red;
-    width: 100%;
-    flex-direction: row;
-    height: 100%;
+    height: fit-content;
+    width: 9vw;
     display: flex;
-    justify-content: center;
-    position: absolute;
-    align-items: flex-end;
-
+    flex-direction: row;
+    justify-content: space-between;
+margin-bottom: 0.5%;
+position: absolute;
 }
 
 .dot{
-height: 25px;
-width: 25px;
-border-color: rgb(255, 255, 255);
-border-radius: 100%;
-border-style: solid;  
-margin-left: 0.5vw;
-margin-right: 0.5vw;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    border: 3px solid white;
+}
+.full-dot{
+    
+    background-color: rgb(255, 255, 255);
+    
 }
 
-.dot-filled{
-    background-color: rgb(255, 255, 255);
-    height: 25px;
-width: 25px;
-border-color: rgb(255, 255, 255);
-border-radius: 100%;
-border-style: solid;
-margin-left: 0.5vw;
-margin-right: 0.5vw;
+.slide{
+    width: 100%;
+    z-index: -5;
+    height: 100%;
+    position: relative;
 }
- #collection-forwarding-ad-container{
-    margin-top: ;
+#arrows-container{
+    height: fit-content;
     width: 70vw;
+    align-self: center;
+    position: absolute;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.arrow{
 
- }
- #collection-ad{
-    width: 40vw;
- }
- #collection-description-part{
-width: 29.5vw;
-height: px;
-background-color:rgba(61, 44, 44, 1) ;
-display: flex; 
-flex-direction: column;
-align-items: center;}
+}
 
-#forwarding-button{
-    padding: 1rem;
-    padding-left: 4rem;
-    margin-top: 2rem;
-    padding-right: 4rem;
-    border: 3px solid white;
-    color: white;
-    border-radius: 13px;
+#collection-advertisement{
+    margin-top: 5vh;
+    width: 70vw;
+    height: 70vh;
     display: flex;
-    width: fit-content;
+}
+#ad-photo{
+    width: 65%;
+}
+#ad-text-container{
+    height: 100%;
+    width: 35%;
+    background-color: rgba(61, 44, 44, 1);
+    display: flex;
     justify-content: center;
-    align-items: center}
-
-
-    #collection-ad-text-container{
-        margin-top: 32%;
-           display: flex;
-        justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
-
-}
-#collection-name{
     font-size: 36px;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    letter-spacing: 2px;
 }
 
-arrows-container{
-    position: absolute;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: baseline;
-    height: fit-content;
-    padding-top:15vw ;}
+#ad-description{
+    color: white;
+    font-size: 14px;
+    padding-top: 0.2rem;
+}
 
-
-
-swiping-arrow{
-    width: 2rem;
-    height: 2rem;
-    background-color: blue;
+#link-button{
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top:0.5rem ;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
 }
 
 footer{
@@ -240,9 +215,8 @@ flex-direction: row;
     font-weight: 900;
     letter-spacing: 2px;
     
-
-    
 }
+
 
 #newsletter-description{
     padding-top: 1vh;
