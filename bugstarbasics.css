@@ -28,34 +28,49 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-
 .user-icon {
-    padding-left: 0.7vw;
 }
-
+#wishlist-counter{
+    display: flex;
+    align-self: flex-end;   
+}
+#shopping-cart-counter{
+    display: flex;
+    align-self: flex-end;
+    padding-left:0;
+}
 #search {
+    padding-left: 0.7vw;
+
     margin-top: 8px;
     font-size: 14px;
 }
 
 #magnifying-glass {
+    padding-left: 0.7vw;
+
     margin-top: 6px;
     margin-left: -0.5vw;
 }
 
 #user-account-icon {
+    padding-left: 0.7vw;
+
     margin-top: 9px;
     margin-left: -0.2vw;
 }
 
 
 #wishlist-icon {
+    padding-left: 0.7vw;
+
     margin-top: 6px;
 }
 
 #shopping-bag {
     margin-top: 7px;
 }
+
 
 #navigation-strap {
     width: 70%;
