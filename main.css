@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -229,6 +230,7 @@ flex-direction: row;
     font-size: 36px;
     font-weight: 900;
     letter-spacing: 2px;
+
     
 }
 
@@ -246,7 +248,6 @@ flex-direction: row;
     border-radius: 0px;
     border-color: rgba(255, 255, 255, 0);
     font-size: 18px;
-    font-weight:50;
 
     
 }
