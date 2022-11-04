@@ -42,16 +42,22 @@ body {
 }
 #search {
     padding-left: 0.7vw;
-
     margin-top: 8px;
     font-size: 14px;
+}
+#search:hover{
+    text-decoration: underline;
 }
 
 #magnifying-glass {
     padding-left: 0.7vw;
-
     margin-top: 6px;
     margin-left: -0.5vw;
+}
+#search:active  #search-input {display: block;}
+#magnifying-glass:active #search-input {display: block;}
+#search-input{
+display: none;
 }
 
 #user-account-icon {
@@ -131,21 +137,18 @@ padding-bottom: 5vh;
 }
 
 #items-container{
-border-width: 2px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-height: 100vh;
-width: 100%;
-}
+    border-width: 2px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:stretch;
+    min-height: 100vh;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-top: 3vh;
 
-.items-row{
-width: 100%;
-height: fit-content;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-}
+    }
+
 
 .cloth-item {
       width: 22%;
@@ -193,10 +196,13 @@ align-items: center;
     font-size: 36px;
     align-items: baseline;
 }
-#items-count{
+.items-count{
     padding-left: 0.5vw;
     font-size: 12px;
 }
+
+
+
 footer{
     display: flex;
     flex-direction: row;
@@ -380,7 +386,6 @@ outline: rgba(145, 142, 142, 1) solid 2px;
     position: absolute;
     z-index: 5;
   }
-
   .dropdown-content {
     display: none;
     position: absolute;
@@ -407,6 +412,7 @@ a{
     text-decoration: none;
     color: black;
 }
+
 .cloth-item:hover{-webkit-filter: brightness(70%);}
 .see-product-button{
     color: rgba(0, 0, 0, 0);
@@ -430,3 +436,44 @@ cursor: pointer;
     color: rgb(0, 0, 0);
     border: 1px solid rgb(0, 0, 0);
   }
+
+  .cloth-item:hover{
+    -webkit-filter: brightness(160%);
+}
+.cloth-item:hover .see-product-button, .cloth-item.hover .see-product-button{
+    -webkit-filter: brightness(70%);
+    z-index: 5;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+}
+
+
+
+.cloth-pic{
+    width: 100%;
+}
+
+
+.items-container{
+    border-width: 2px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:stretch;
+    min-height: 100vh;
+    max-width: 100%;
+        margin-top: 3vh;
+    flex-wrap: wrap;
+    }
+    
+#tshirts-container{
+    border-width: 2px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:stretch;
+    min-height: 100vh;
+    max-width: 100%;
+        margin-top: 3vh;
+    flex-wrap: wrap;
+    }

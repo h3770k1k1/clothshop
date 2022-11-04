@@ -1,136 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="t-shirts.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUGSTAR</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-    </style>
-
-    </style>
-</head>
-
-<body>
-<div id="top-container-placeholder"></div>
-    </div>
-    <hr style="height: 1px;px;border-width:0;color:rgba(0, 0, 0, 0.3);background-color:rgba(0, 0, 0, 0.3);
-    ">
-    <div id="bottom-container">
-
-        <div id="shop-container">
-            <div id="site-navigation-container">
-                <div id="first-row">You are here: Main >> Shop
-                </div>
-                <div id="category-name">T-SHIRTS <div id="items-count">5 items</div>
-                </div>
-                <div id="filtr-container">
-                    <div id="dropdown">
-                        <div id="dropdown-text">Size</div>
-                        <button id="dropbtn"><svg id="dropbtn-svg" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L13 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-
-                        </button>
-                        <div id="dropdown-content">
-                            <a href="#">S</a>
-                            <a href="#">M</a>
-                            <a href="#">L</a>
-                        </div>
-                    </div>
-                    <div id="filtr-price-container"><input class="price-input" type="text" placeholder="lowest price"> -
-                        <input class="price-input" type="text" placeholder="highest price">
-                        <div id="filtr-button">FILTR</div>
-                    </div>
-                </div>
-            </div>
-            <div id="items-container">
-                <div class="items-row">
-                    <div class="cloth-item"><a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-                        <img src="resources/cloth-item (5).png" alt="" width="100%">
-                        <div class="item-description">
-                            <div class="product-name">LANA OVERSIZE T-SHIRT</div>
-                            <div class="product-color">CREAM</div>
-                            <div class="price">XX.XX ZŁ</div>
-
-                        </div>
-                    </div>
-                    <div class="cloth-item"><a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-                        <img src="resources/cloth-item (15).png" alt="" width="100%">
-                        <div class="item-description">
-                            <div class="product-name">DAD CLASSIC CUT TEE</div>
-                            <div class="product-color">WHITE</div>
-                            <div class="price">XX.XX ZŁ</div>
-
-                        </div>
-                    </div>
-                    <div class="cloth-item"><a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-                        <img src="resources/cloth-item (16).png" alt="" width="100%">
-                        <div class="item-description">
-                            <div class="product-name">SCOOBY HIPLENGTH T-SHIRT</div>
-                            <div class="product-color">WHITE</div>
-                            <div class="price">XX.XX ZŁ</div>
-
-                        </div>
-                    </div>
-                    <div class="cloth-item"><a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-                        <img src="resources/cloth-item (17).png" alt="" width="100%">
-                        <div class="item-description">
-                            <div class="">OVERSIZE PRINT T-SHIRT</div>
-                            <div class="product-color">GREEN</div>
-                            <div class="price">XX.XX ZŁ</div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="items-row">
-                    <div class="cloth-item"><a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-                        <img src="resources/cloth-item (18).png" alt="" width="100%">
-                        <div class="item-description">
-                            <div class="product-name">ANIME T-SHIRT</div>
-                            <div class="product-color">BLACK</div>
-                            <div class="price">XX.XX ZŁ</div>
-
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-    
-</body>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script>
-    $(function () {
-        $("#top-container-placeholder").load("top-container.html");
-    });
-</script>
-<script>
-	$(function(){
-	  $("body").append($('<div></div>').load("footer.html"));
-	})
-	;
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="shopsubpage.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BUGSTAR</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+		</style>
+	</head>
+	<body>
+		<div id="top-container-placeholder"></div>
+		<hr
+			style="height: 1px;px;border-width:0;color:rgba(0, 0, 0, 0.3);background-color:rgba(0, 0, 0, 0.3);
+"
+		/>
+		<div id="bottom-container">
+			<div id="shop-container">
+				<div id="site-navigation-container">
+					<div id="first-row">You are here: Main >> Shop</div>
+					<div id="category-name">
+						T-SHIRTS
+						<div id="tshirts-count" class="items-count"></div>
+					</div>
+					<div id="filtr-container">
+						<div id="dropdown">
+							<div id="dropdown-text">Size</div>
+							<button id="dropbtn">
+								<svg
+									id="dropbtn-svg"
+									width="14"
+									height="8"
+									viewBox="0 0 14 8"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M1 1L7 7L13 1"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</button>
+							<div id="dropdown-content">
+								<a href="#">S</a>
+								<a href="#">M</a>
+								<a href="#">L</a>
+							</div>
+						</div>
+						<div id="filtr-price-container">
+							<input
+								class="price-input"
+								type="text"
+								placeholder="lowest price"
+							/>
+							-
+							<input
+								class="price-input"
+								type="text"
+								placeholder="highest price"
+							/>
+							<div id="filtr-button">FILTR</div>
+						</div>
+					</div>
+				</div>
+				<div id="tshirts-container" class="items-container"></div>
+			</div>
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(function () {
+			$("#top-container-placeholder").load("top-container.html");
+		});
 	</script>
+	<script>
+		$(function () {
+			$("body").append($("<div></div>").load("footer.html"));
+		});
+	</script>
+	<script>
+		const currentPage = "tshirts";
+	</script>
+	<script src="loadItems.js"></script>
 </html>

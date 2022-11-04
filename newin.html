@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="stylesheet" href="newin.css" />
+		<link rel="stylesheet" href="shopsubpage.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>BUGSTAR</title>
 		<style>
@@ -25,78 +25,13 @@
 					<div id="first-row">You are here: Main >> new in BUGSTAR</div>
 					<div id="category-name">
 						NEW IN BUGSTAR
-						<div id="items-count">5 items</div>
+						<div id="new-items-count" class="items-count">5 items</div>
 					</div>
 				</div>
-				<div id="items-container">
-					<div class="items-row">
-						<div class="cloth-item">
-							<a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-							<img src="resources/cloth-item (1).png" alt="" width="100%" />
-							<div class="item-description">
-								<div class="product-name">COQUETTE PJ TOP</div>
-								<div class="product-color">WHITE</div>
-								<div class="price">XX.XX ZŁ</div>
-							</div>
-						</div>
-						<div class="cloth-item">
-							<a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-							<img src="resources/cloth-item (4).png" alt="" width="100%" />
-							<div class="item-description">
-								<div class="product-name">YELLOW DEMIN MINI SKIRT</div>
-								<div class="product-color">YELLOW</div>
-								<div class="price">XX.XX ZŁ</div>
-							</div>
-						</div>
-						<div class="cloth-item">
-							<a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-							<img src="resources/cloth-item (2).png" alt="" width="100%" />
-							<div class="item-description">
-								<div class="product-name">DEMIN POCKETS SKIRT</div>
-								<div class="product-color">BLUE DEMIN</div>
-								<div class="price">XX.XX ZŁ</div>
-							</div>
-						</div>
-						<div class="cloth-item">
-							<a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-							<img src="resources/cloth-item (3).png" alt="" width="100%" />
-							<div class="item-description">
-								<div class="">ANKLE STRAP HEELS</div>
-								<div class="product-color">BLACK</div>
-								<div class="price">XX.XX ZŁ</div>
-							</div>
-						</div>
-					</div>
-					<div class="item-row">
-						<div class="cloth-item">
-							<a href="product.html"
-								><div class="see-product-button">SEE PRODUCT</div></a
-							>
-							<img src="resources/cloth-item (5).png" alt="" width="100%" />
-
-							<div class="item-description">
-								<div class="product-name">LANA OVERSIZE T-SHIRT</div>
-								<div class="product-color">CREAM</div>
-								<div class="price">XX.XX ZŁ</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div id="new-items-container" class="items-container"></div>
 			</div>
 		</div>
 	</body>
-	<script>
-		scr = "";
-	</script>
-
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
 		$(function () {
@@ -108,5 +43,8 @@
 			$("body").append($("<div></div>").load("footer.html"));
 		});
 	</script>
-	<script src="shoppingsubpages.js"></script>
+	<script>
+		const currentPage = "newin";
+	</script>
+	<script src="loadItems.js"></script>
 </html>
