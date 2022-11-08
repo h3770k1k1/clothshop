@@ -125,21 +125,25 @@ function loadItem(item, containerName) {
 	const itemDiv = document.createElement("div");
 	itemDiv.classList.add("cloth-item");
 	appendItemElements(itemDiv, item);
+
 	itemsContainer.appendChild(itemDiv);
 }
 
 function appendItemElements(itemDiv, item) {
-	itemDiv.appendChild(seeProductButton());
+	itemDiv.appendChild(seeProductButton(item));
 	itemDiv.appendChild(itemDescription(item));
 	itemDiv.appendChild(clothItemPic(item));
 	itemDiv.appendChild(productName(item));
 	itemDiv.appendChild(productColor(item));
 	itemDiv.appendChild(price(item));
 }
-function seeProductButton() {
+function seeProductButton(item) {
 	const a = document.createElement("a");
 	a.setAttribute("href", "product.html");
-
+	a.addEventListener("click", () => {
+		console.log(item);
+		sessionStorage.setItem("item", JSON.stringify(item));
+	});
 	const seeProductButton = document.createElement("div");
 	seeProductButton.classList.add("see-product-button");
 	seeProductButton.innerText = "SEE PRODUCT";
