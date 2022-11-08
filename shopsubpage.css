@@ -48,17 +48,25 @@ body {
 #search:hover{
     text-decoration: underline;
 }
+#dropdown-input-content{position: absolute;
+    display: none;}
+#drop-input{
+    position: relative;
+  display: inline-block;
+}
+
+#drop-input:hover #dropdown-input-content{
+    display: block;
+  }
+  #search-input{border-radius: 0;
+}
 
 #magnifying-glass {
     padding-left: 0.7vw;
     margin-top: 6px;
     margin-left: -0.5vw;
 }
-#search:active  #search-input {display: block;}
-#magnifying-glass:active #search-input {display: block;}
-#search-input{
-display: none;
-}
+
 
 #user-account-icon {
     padding-left: 0.7vw;
@@ -139,9 +147,7 @@ padding-bottom: 5vh;
 #items-container{
     border-width: 2px;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
-    align-items:stretch;
     min-height: 100vh;
     max-width: 100%;
     flex-wrap: wrap;

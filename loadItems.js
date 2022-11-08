@@ -64,6 +64,57 @@ const tshirts = [
 	},
 ];
 
+const basics = [
+	{
+		imageSource: "resources/cloth-item (3).png",
+		name: "ANKLE STRAP HEELS",
+		color: "BLACK",
+		price: "69.99ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (6).png",
+		name: "COQUETTE PJ TOP",
+		color: "WHITE",
+		price: "56.00 ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (7).png",
+		name: "POCKET DEMIN MINI SKIRT",
+		color: "BLUE",
+		price: "29.99ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (8).png",
+		name: "ANKLE STRAP HEELS",
+		color: "BLACK",
+		price: "69.99ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (9).png",
+		name: "CUTE DEMIN MINISKIRT",
+		color: "YELLOW",
+		price: "19.99ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (10).png",
+		name: "LANA T-SHIRT Y2K",
+		color: "CREAM",
+		price: "19.99ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (11).png",
+		name: "CUTE DEMIN MINISKIRT",
+		color: "YELLOW",
+		price: "19.99ZŁ",
+	},
+	{
+		imageSource: "resources/cloth-item (12).png",
+		name: "LANA T-SHIRT Y2K",
+		color: "CREAM",
+		price: "19.99ZŁ",
+	},
+];
+
 function addItemsCount(itemsCountContainerName, items) {
 	let itemsCountContainer = document.getElementById(itemsCountContainerName);
 	itemsCountContainer.innerText = items.length + " items";
@@ -139,4 +190,11 @@ if (currentPage == "newin") {
 		loadItem(newInItems[index], "new-items-container");
 	}
 	addItemsCount("new-items-count", newInItems);
+}
+
+if (currentPage == "bugstarbasics") {
+	for (let index = 0; index < basics.length; index++) {
+		loadItem(basics[index], "basics-container");
+	}
+	addItemsCount("bugstarbasic-items-count", basics);
 }
