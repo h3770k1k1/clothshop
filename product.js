@@ -1,3 +1,55 @@
+item = JSON.parse(sessionStorage.item);
+
+if (item.XS == true) {
+	const xs = document.getElementById("xs");
+	xs.classList.add("active");
+}
+
+if (item.S == true) {
+	const s = document.getElementById("s");
+	s.classList.add("active");
+}
+
+if (item.M == true) {
+	const m = document.getElementById("m");
+	m.classList.add("active");
+}
+
+if (item.L == true) {
+	const l = document.getElementById("l");
+	l.classList.add("active");
+}
+
+if (item.XL == true) {
+	const xl = document.getElementById("xl");
+	xl.classList.add("active");
+}
+
+if (item.XS != true) {
+	const xs = document.getElementById("xs");
+	xs.classList.add("not-avaible");
+}
+
+if (item.S != true) {
+	const s = document.getElementById("s");
+	s.classList.add("not-avaible");
+}
+
+if (item.M != true) {
+	const m = document.getElementById("m");
+	m.classList.add("not-avaible");
+}
+
+if (item.L != true) {
+	const l = document.getElementById("l");
+	l.classList.add("not-avaible");
+}
+
+if (item.XL != true) {
+	const xl = document.getElementById("xl");
+	xl.classList.add("not-avaible");
+}
+
 const sizeChars = document.getElementsByClassName("avaible");
 const activeChars = document.querySelectorAll(".avaible");
 

@@ -12,7 +12,9 @@ const items = [
 		M: true,
 		L: true,
 		XL: true,
-		category: "newIn",
+		basics: false,
+		tshirts: false,
+		newIn: true,
 		producer: "B & G",
 	},
 	{
@@ -25,7 +27,9 @@ const items = [
 		M: true,
 		L: true,
 		XL: true,
-		category: "newIn",
+		basics: false,
+		tshirts: false,
+		newIn: true,
 		producer: "Lil Bug",
 	},
 	{
@@ -38,7 +42,9 @@ const items = [
 		M: true,
 		L: true,
 		XL: true,
-		category: "newIn", //basics",
+		basics: true,
+		tshirts: false,
+		newIn: true,
 		producer: "BUGSTAR",
 	},
 	{
@@ -51,7 +57,9 @@ const items = [
 		M: false,
 		L: true,
 		XL: false,
-		category: "newIn",
+		basics: false,
+		tshirts: false,
+		newIn: true,
 		producer: "Reset Vet",
 	},
 
@@ -65,7 +73,9 @@ const items = [
 		M: true,
 		L: true,
 		XL: true,
-		category: "newIn", //"tshirts",
+		basics: false,
+		tshirts: true,
+		newIn: true,
 		producer: "bug of the loom",
 	},
 	{
@@ -78,7 +88,9 @@ const items = [
 		M: true,
 		L: true,
 		XL: true,
-		category: "tshirts",
+		basics: false,
+		tshirts: true,
+		newIn: false,
 		producer: "LiL Bug x Bugstar",
 	},
 	{
@@ -91,7 +103,9 @@ const items = [
 		M: false,
 		L: true,
 		XL: true,
-		category: "tshirts",
+		basics: false,
+		tshirts: true,
+		newIn: false,
 		producer: "Buground Warderobe",
 	},
 	{
@@ -104,7 +118,9 @@ const items = [
 		M: true,
 		L: false,
 		XL: false,
-		category: "tshirts",
+		basics: false,
+		tshirts: true,
+		newIn: false,
 		producer: "Chip Shop",
 	},
 	{
@@ -117,7 +133,9 @@ const items = [
 		M: false,
 		L: true,
 		XL: true,
-		category: "tshirts",
+		basics: false,
+		tshirts: true,
+		newIn: false,
 		producer: "Critical Bug",
 	},
 
@@ -131,7 +149,9 @@ const items = [
 		M: true,
 		L: false,
 		XL: true,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "STARBUGZ",
 	},
 	{
@@ -144,7 +164,9 @@ const items = [
 		M: true,
 		L: false,
 		XL: false,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "Bugkovsky",
 	},
 	{
@@ -157,7 +179,9 @@ const items = [
 		M: false,
 		L: true,
 		XL: true,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "New Bugger",
 	},
 	{
@@ -170,7 +194,9 @@ const items = [
 		M: true,
 		L: false,
 		XL: true,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "Bugcoste",
 	},
 	{
@@ -183,7 +209,9 @@ const items = [
 		M: true,
 		L: false,
 		XL: true,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "Buggio Buggani",
 	},
 	{
@@ -196,7 +224,9 @@ const items = [
 		M: true,
 		L: false,
 		XL: true,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "Luis Bugtown",
 	},
 	{
@@ -209,18 +239,40 @@ const items = [
 		M: true,
 		L: false,
 		XL: false,
-		category: "basics",
+		basics: true,
+		tshirts: false,
+		newIn: false,
 		producer: "bugshka",
 	},
 ];
 
-/*function addItemsCount(itemsCountContainerName, items) {
+function addItemsCount(itemsCountContainerName, items) {
 	let itemsCountContainer = document.getElementById(itemsCountContainerName);
 	itemsCountContainer.innerText = items.length + " items";
-} */
+}
 
-function loadItem(item, containerName, category) {
-	if (item.category == category) {
+function loadBasicsItem(item, containerName, counter) {
+	if (item.basics == true) {
+		counter += 1;
+		const itemsContainer = document.getElementById(containerName);
+		const itemDiv = document.createElement("div");
+		itemDiv.classList.add("cloth-item");
+		appendItemElements(itemDiv, item);
+		itemsContainer.appendChild(itemDiv);
+	}
+}
+function loadTshirtsItem(item, containerName) {
+	if (item.tshirts == true) {
+		const itemsContainer = document.getElementById(containerName);
+		const itemDiv = document.createElement("div");
+		itemDiv.classList.add("cloth-item");
+		appendItemElements(itemDiv, item);
+		itemsContainer.appendChild(itemDiv);
+	}
+}
+
+function loadNewInItem(item, containerName) {
+	if (item.newIn == true) {
 		const itemsContainer = document.getElementById(containerName);
 		const itemDiv = document.createElement("div");
 		itemDiv.classList.add("cloth-item");
@@ -284,21 +336,21 @@ function price(item) {
 
 if (currentPage == "newin") {
 	for (let index = 0; index < items.length; index++) {
-		loadItem(items[index], "new-items-container", "newIn");
+		loadNewInItem(items[index], "new-items-container");
 	}
 	//addItemsCount("new-items-count", items);
 }
 
 if (currentPage == "tshirts") {
 	for (let index = 0; index < items.length; index++) {
-		loadItem(items[index], "tshirts-container", "tshirts");
+		loadTshirtsItem(items[index], "tshirts-container");
 	}
 	//addItemsCount("tshirts-count", items);
 }
 
 if (currentPage == "bugstarbasics") {
 	for (let index = 0; index < items.length; index++) {
-		loadItem(items[index], "basics-container", "basics");
+		loadBasicsItem(items[index], "basics-container");
 	}
 	//addItemsCount("bugstarbasic-items-count", items);
 }
