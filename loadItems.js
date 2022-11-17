@@ -1,132 +1,232 @@
-const newInItems = [
+const items = [
 	{
-		imageSource: "resources/cloth-item (1).png",
+		mainImageSource: "resources/cloth-item (1).png",
+		ImageSource1: "resources/cloth-item (19).png",
+		ImageSource2: "resources/cloth-item (20).png",
+		ImageSource3: "resources/cloth-item (21).png",
 		name: "COQUETTE PJ TOP",
 		color: "WHITE",
 		price: "56.00 ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: true,
+		XL: true,
+		category: "newIn",
+		producer: "B & G",
 	},
 	{
-		imageSource: "resources/cloth-item (2).png",
+		mainImageSource: "resources/cloth-item (2).png",
 		name: "POCKET DEMIN MINI SKIRT",
 		color: "BLUE",
 		price: "29.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: true,
+		XL: true,
+		category: "newIn",
+		producer: "Lil Bug",
 	},
 	{
-		imageSource: "resources/cloth-item (3).png",
+		mainImageSource: "resources/cloth-item (3).png",
 		name: "ANKLE STRAP HEELS",
 		color: "BLACK",
 		price: "69.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: true,
+		XL: true,
+		category: "newIn", //basics",
+		producer: "BUGSTAR",
 	},
 	{
-		imageSource: "resources/cloth-item (4).png",
+		mainImageSource: "resources/cloth-item (4).png",
 		name: "CUTE DEMIN MINISKIRT",
 		color: "YELLOW",
 		price: "19.99ZŁ",
+		XS: true,
+		S: false,
+		M: false,
+		L: true,
+		XL: false,
+		category: "newIn",
+		producer: "Reset Vet",
 	},
+
 	{
-		imageSource: "resources/cloth-item (5).png",
+		mainImageSource: "resources/cloth-item (5).png",
 		name: "LANA T-SHIRT Y2K",
 		color: "CREAM",
 		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: true,
+		XL: true,
+		category: "newIn", //"tshirts",
+		producer: "bug of the loom",
 	},
-];
-
-const tshirts = [
 	{
-		imageSource: "resources/cloth-item (5).png",
+		mainImageSource: "resources/cloth-item (15).png",
+		name: "POCKET DEMIN MINI SKIRT",
+		color: "BLUE",
+		price: "29.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: true,
+		XL: true,
+		category: "tshirts",
+		producer: "LiL Bug x Bugstar",
+	},
+	{
+		mainImageSource: "resources/cloth-item (16).png",
+		name: "ANKLE STRAP HEELS",
+		color: "BLACK",
+		price: "69.99ZŁ",
+		XS: true,
+		S: false,
+		M: false,
+		L: true,
+		XL: true,
+		category: "tshirts",
+		producer: "Buground Warderobe",
+	},
+	{
+		mainImageSource: "resources/cloth-item (17).png",
+		name: "CUTE DEMIN MINISKIRT",
+		color: "YELLOW",
+		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: false,
+		XL: false,
+		category: "tshirts",
+		producer: "Chip Shop",
+	},
+	{
+		mainImageSource: "resources/cloth-item (18).png",
+		name: "LANA T-SHIRT Y2K",
+		color: "CREAM",
+		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: false,
+		L: true,
+		XL: true,
+		category: "tshirts",
+		producer: "Critical Bug",
+	},
+
+	{
+		mainImageSource: "resources/cloth-item (6).png",
 		name: "COQUETTE PJ TOP",
 		color: "WHITE",
 		price: "56.00 ZŁ",
+		XS: false,
+		S: false,
+		M: true,
+		L: false,
+		XL: true,
+		category: "basics",
+		producer: "STARBUGZ",
 	},
 	{
-		imageSource: "resources/cloth-item (15).png",
+		mainImageSource: "resources/cloth-item (7).png",
 		name: "POCKET DEMIN MINI SKIRT",
 		color: "BLUE",
 		price: "29.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: false,
+		XL: false,
+		category: "basics",
+		producer: "Bugkovsky",
 	},
 	{
-		imageSource: "resources/cloth-item (16).png",
+		mainImageSource: "resources/cloth-item (8).png",
 		name: "ANKLE STRAP HEELS",
 		color: "BLACK",
 		price: "69.99ZŁ",
+		XS: true,
+		S: true,
+		M: false,
+		L: true,
+		XL: true,
+		category: "basics",
+		producer: "New Bugger",
 	},
 	{
-		imageSource: "resources/cloth-item (17).png",
+		mainImageSource: "resources/cloth-item (9).png",
 		name: "CUTE DEMIN MINISKIRT",
 		color: "YELLOW",
 		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: false,
+		XL: true,
+		category: "basics",
+		producer: "Bugcoste",
 	},
 	{
-		imageSource: "resources/cloth-item (18).png",
+		mainImageSource: "resources/cloth-item (10).png",
 		name: "LANA T-SHIRT Y2K",
 		color: "CREAM",
 		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: false,
+		XL: true,
+		category: "basics",
+		producer: "Buggio Buggani",
+	},
+	{
+		mainImageSource: "resources/cloth-item (11).png",
+		name: "CUTE DEMIN MINISKIRT",
+		color: "YELLOW",
+		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: false,
+		XL: true,
+		category: "basics",
+		producer: "Luis Bugtown",
+	},
+	{
+		mainImageSource: "resources/cloth-item (12).png",
+		name: "LANA T-SHIRT Y2K",
+		color: "CREAM",
+		price: "19.99ZŁ",
+		XS: true,
+		S: true,
+		M: true,
+		L: false,
+		XL: false,
+		category: "basics",
+		producer: "bugshka",
 	},
 ];
 
-const basics = [
-	{
-		imageSource: "resources/cloth-item (3).png",
-		name: "ANKLE STRAP HEELS",
-		color: "BLACK",
-		price: "69.99ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (6).png",
-		name: "COQUETTE PJ TOP",
-		color: "WHITE",
-		price: "56.00 ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (7).png",
-		name: "POCKET DEMIN MINI SKIRT",
-		color: "BLUE",
-		price: "29.99ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (8).png",
-		name: "ANKLE STRAP HEELS",
-		color: "BLACK",
-		price: "69.99ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (9).png",
-		name: "CUTE DEMIN MINISKIRT",
-		color: "YELLOW",
-		price: "19.99ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (10).png",
-		name: "LANA T-SHIRT Y2K",
-		color: "CREAM",
-		price: "19.99ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (11).png",
-		name: "CUTE DEMIN MINISKIRT",
-		color: "YELLOW",
-		price: "19.99ZŁ",
-	},
-	{
-		imageSource: "resources/cloth-item (12).png",
-		name: "LANA T-SHIRT Y2K",
-		color: "CREAM",
-		price: "19.99ZŁ",
-	},
-];
-
-function addItemsCount(itemsCountContainerName, items) {
+/*function addItemsCount(itemsCountContainerName, items) {
 	let itemsCountContainer = document.getElementById(itemsCountContainerName);
 	itemsCountContainer.innerText = items.length + " items";
-}
+} */
 
-function loadItem(item, containerName) {
-	const itemsContainer = document.getElementById(containerName);
-	const itemDiv = document.createElement("div");
-	itemDiv.classList.add("cloth-item");
-	appendItemElements(itemDiv, item);
-
-	itemsContainer.appendChild(itemDiv);
+function loadItem(item, containerName, category) {
+	if (item.category == category) {
+		const itemsContainer = document.getElementById(containerName);
+		const itemDiv = document.createElement("div");
+		itemDiv.classList.add("cloth-item");
+		appendItemElements(itemDiv, item);
+		itemsContainer.appendChild(itemDiv);
+	}
 }
 
 function appendItemElements(itemDiv, item) {
@@ -158,7 +258,7 @@ function itemDescription(item) {
 }
 function clothItemPic(item) {
 	const clothItemPic = document.createElement("img");
-	clothItemPic.src = item.imageSource;
+	clothItemPic.src = item.mainImageSource;
 	clothItemPic.classList.add("cloth-pic");
 	return clothItemPic;
 }
@@ -182,23 +282,23 @@ function price(item) {
 	return price;
 }
 
-if (currentPage == "tshirts") {
-	for (let index = 0; index < tshirts.length; index++) {
-		loadItem(tshirts[index], "tshirts-container");
+if (currentPage == "newin") {
+	for (let index = 0; index < items.length; index++) {
+		loadItem(items[index], "new-items-container", "newIn");
 	}
-	addItemsCount("tshirts-count", tshirts);
+	//addItemsCount("new-items-count", items);
 }
 
-if (currentPage == "newin") {
-	for (let index = 0; index < newInItems.length; index++) {
-		loadItem(newInItems[index], "new-items-container");
+if (currentPage == "tshirts") {
+	for (let index = 0; index < items.length; index++) {
+		loadItem(items[index], "tshirts-container", "tshirts");
 	}
-	addItemsCount("new-items-count", newInItems);
+	//addItemsCount("tshirts-count", items);
 }
 
 if (currentPage == "bugstarbasics") {
-	for (let index = 0; index < basics.length; index++) {
-		loadItem(basics[index], "basics-container");
+	for (let index = 0; index < items.length; index++) {
+		loadItem(items[index], "basics-container", "basics");
 	}
-	addItemsCount("bugstarbasic-items-count", basics);
+	//addItemsCount("bugstarbasic-items-count", items);
 }
