@@ -31,7 +31,8 @@
                 <div id="category-name">MY BAG 
                 </div>
              <hr id="bottom-hr">  
-            </div><div id="items-list-container"></div>
+            </div><ul id="items-list-container">
+            </ul>
    
 <div id="announcement">Your bag is empty</div>      
         </div>
@@ -40,7 +41,7 @@
     </div>
     
 </body>
-<script src="mybag.js"></script>
+<script src="itemsCart.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script><script>
     $(function () {
         $("#top-container-placeholder").load("top-container.html");
@@ -52,4 +53,7 @@
 	})
 	;
 	</script>
+    <script>
+        getCartItems().forEach(item=>{$('#items-list-container').append($(`<li>${item.name}</li>`));})
+    </script>
 </html>

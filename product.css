@@ -305,19 +305,18 @@ margin-right: 1.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #918E8E;
+
+}
+.available-size{
+    color: black;
     cursor: pointer;
 }
-  .size-char:hover{
+.available-size:hover{
     text-decoration: underline;
+
 }
 
-.not-avaible{
-    color: #918E8E;
-    text-decoration: none;
-}
-.not-avaible:hover{
-    text-decoration: none;
-}
 .choosen{
     background-color: rgba(30, 30, 30, 0.8);
     color: white;

@@ -12,6 +12,7 @@
 			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap");
 			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	</head>
 
 	<body>
@@ -100,7 +101,6 @@
 	<script>
 		const currentPage = "product";
 	</script>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
 		$(function () {
 			$("#top-container-placeholder").load("top-container.html");
@@ -113,5 +113,12 @@
 	</script>
 	<script src="loadItems.js"></script>
 	<script src="loadproductpics.js"></script>
+	<script src="itemsCart.js"></script>
+	<script>
+		console.log(getCartItems());
+	</script>
 	<script src="product.js"></script>
+	<script>
+		productSiteLoading();
+	</script>
 </html>
