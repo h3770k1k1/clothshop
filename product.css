@@ -254,7 +254,7 @@ hr{
     justify-content: space-between;
 }
 .product-pic{
-    padding-bottom:3%;
+    padding-bottom:8.5%;
 }
 #main-pic-container{
     width:67% ;
@@ -483,3 +483,7 @@ margin-bottom:5% ;
     align-items: center;
     width: 100%;
 z-index: 10;}
+
+.red-background{
+    background-color: rgba(255, 0, 0, 0.212);
+}

@@ -413,3 +413,19 @@ a{
     text-decoration: none;
     color: black;
 }
+
+
+
+#shopping-bag-container{   
+    width: 70vw;
+    padding-bottom: 5vh;
+
+    }
+
+#items-list-container{
+    border: 1px solid red;
+    width: 100%;
+    height: fit-content;
+    
+
+}

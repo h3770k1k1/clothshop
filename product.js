@@ -50,20 +50,32 @@ if (item.XL != true) {
 	xl.classList.add("not-avaible");
 }
 
-const sizeChars = document.getElementsByClassName("avaible");
-const activeChars = document.querySelectorAll(".avaible");
+const sizeChars = document.querySelectorAll(".size-char");
 
 for (let index = 0; index < sizeChars.length; index++) {
 	$(sizeChars[index]).click(function () {
-		if ($(this).hasClass("choosen")) {
-			$(this).removeClass("choosen");
-		} else {
-			activeChars.forEach((char) => {
-				char.classList.remove("choosen");
-			});
-			$(this).addClass("choosen");
+		if ($(this).hasClass("active")) {
+			if ($(this).hasClass("choosen")) {
+				$(this).removeClass("choosen");
+			} else {
+				sizeChars.forEach((char) => {
+					char.classList.remove("choosen");
+				});
+				$(this).addClass("choosen");
+				sizeOptionsContainer.classList.remove("red-background");
+			}
 		}
 	});
+}
+
+const sizeOptionsContainer = document.getElementById("size-options");
+
+function checkIfSizeChoosen() {
+	for (let index = 0; index < sizeChars.length; index++) {
+		if ($(sizeChars[index]).hasClass("choosen")) {
+			return true;
+		}
+	}
 }
 
 const addButton = document.getElementById("add-button");
@@ -98,8 +110,12 @@ tickIcon.id = "tick-icon";
 
 addButton.addEventListener("click", function () {
 	console.log("xd");
-	showPopUp();
-	increaseCounter(shoppingCardCounter, j);
+	if (checkIfSizeChoosen()) {
+		showPopUp();
+		increaseCounter(shoppingCardCounter, j);
+	} else {
+		sizeOptionsContainer.classList.add("red-background");
+	}
 });
 
 closeButton.addEventListener("click", function () {
@@ -149,7 +165,7 @@ document.getElementById("product-price").innerText = item.price;
 
 const mainPicContainer = document.getElementById("main-pic-container");
 let mainPic = document.createElement("img");
-mainPic.src = item.mainImageSource;
+mainPic.src = item.croppedImageSource;
 mainPic.classList.add("main-pic");
 mainPicContainer.appendChild(mainPic);
 
