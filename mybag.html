@@ -31,10 +31,10 @@
                 <div id="category-name">MY BAG 
                 </div>
              <hr id="bottom-hr">  
-            </div><ul id="items-list-container">
+            </div><ul id="items-list-container"><div id="announcement">Your bag is empty</div>  
             </ul>
    
-<div id="announcement">Your bag is empty</div>      
+    
         </div>
 
 
@@ -54,6 +54,6 @@
 	;
 	</script>
     <script>
-        getCartItems().forEach(item=>{$('#items-list-container').append($(`<li>${item.name}</li>`));})
+       getCartItems().forEach(item=>{$('#items-list-container').append($(`<li>${item.name}</li>`));})
     </script>
 </html>

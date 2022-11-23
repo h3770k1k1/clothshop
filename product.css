@@ -311,7 +311,7 @@ margin-right: 1.5vw;
 .available-size{
     color: black;
     cursor: pointer;
-}
+    }
 .available-size:hover{
     text-decoration: underline;
 

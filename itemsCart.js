@@ -1,6 +1,7 @@
-const itemsCart = getCartItems();
+let itemsCart = getCartItems();
 
 function addItemToCart(item) {
+	document.getElementById("announcement").innerHTML = "";
 	itemsCart.push(item);
 	saveItemsCartToStorage();
 }
@@ -11,5 +12,6 @@ function removeFromCart(item) {
 	//itemsCart.removeItemThatHasId(item.id)
 }
 function getCartItems() {
-	return JSON.parse(sessionStorage.getItem("itemsCart"));
+	const items = JSON.parse(sessionStorage.getItem("itemsCart"));
+	return items ? items : [];
 }
