@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="mybag.css" />
-    <link rel="stylesheet" href="shopsubpage.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUGSTAR</title>
     <style>
@@ -19,21 +18,36 @@
 
 <body>
   <div id="top-container-placeholder"></div>
-    </div>
-    <hr style="height: 1px;border-width:0;color:rgba(0, 0, 0, 0.3);background-color:rgba(0, 0, 0, 0.3);
-    ">
     <div id="bottom-container">
-
         <div id="shopping-bag-container">
             <div id="site-navigation-container">
                 <div id="first-row">You are here: Main >> My Bag
                 </div>
                 <div id="category-name">MY BAG 
                 </div>
-             <hr id="bottom-hr">  
-            </div><ul id="items-list-container"><div id="announcement">Your bag is empty</div>  
+                <hr id="bottom-hr">  
+            </div>
+            <div id="container-name">ORDER SUMMARY</div>
+            
+            <div id="items-cart">
+            <ul id="items-list-container"> 
             </ul>
-   
+<div id="order-summary">
+    <div id="price-container">
+        <div id="sum-row"><div id="items-sum">x</div><div id="sum">xx</div></div>
+        <div id="total-sum-row"><div>TOTAL</div><div id="total-sum">xx</div></div>
+        <div id="continue-button">CONTINUE</div>
+
+    </div>
+    <div id="promotional-code-container">
+        <div id="code-question">Do you have promotional code?</div>
+        <div id="code-input-container"><input id="code-input" type="text"placeholder="Enter Your code"><div id="apply-button">APPLY</div></div>
+    </div>
+</div></div></div>
+
+
+
+  
     
         </div>
 
@@ -41,8 +55,10 @@
     </div>
     
 </body>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="itemsCart.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script><script>
+
+<script>
     $(function () {
         $("#top-container-placeholder").load("top-container.html");
     });
@@ -54,6 +70,6 @@
 	;
 	</script>
     <script>
-       getCartItems().forEach(item=>{$('#items-list-container').append($(`<li>${item.name}</li>`));})
+       displayCart();
     </script>
 </html>

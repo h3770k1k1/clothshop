@@ -15,9 +15,9 @@ body {
 
 #bottom-hr {
     background-color:  rgba(0, 0, 0, 0.3);
-    width: 47%;
+    width: 75%;
     display: flex;
-    align-self: flex-start;
+    align-self: center;
     position: absolute;
 }
 #top-container{
@@ -141,7 +141,7 @@ box-sizing: border-box;
 }
 
 #shopping-bag-container{
-    
+  
 width: 70vw;
 padding-bottom: 5vh;
 }
@@ -276,11 +276,7 @@ input:focus {
     align-items: baseline;
     line-height: 27px;
 }
-hr{
-    width: 75%;
-    margin-top: 0;
-    margin-bottom: 0;
-}
+
 
 
 #filtr-container{
@@ -423,9 +419,191 @@ a{
     }
 
 #items-list-container{
-    border: 1px solid red;
-    width: 100%;
+    border-top: 2px solid rgba(0, 0, 0, 0.3)    ;
+    width: 62%;
     height: fit-content;
     
 
+}
+
+
+
+ul{
+    padding: 0;
+    margin: 0;
+
+}
+
+li{
+    list-style-type: none;
+    width: 100%;
+margin-left: 0;
+height: min-content;
+margin-top: 1.5rem;
+}
+
+
+.cart-pic-container{
+}
+.details-container{
+    border: 1px solid rebeccapurple;
+    width: 70%;
+
+}
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-name-container{
+width: 25%;
+}
+
+.remove-button{
+    font-weight: 600;
+    font-size: 13px;
+    padding-top: 1rem;
+
+}
+
+.product-size{
+
+}
+
+.quantity-container{
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 13%;
+
+}
+
+.quantity-container-element{
+border: 1px solid rgba(0, 0, 0, 0.3);
+width: 1.5rem;
+height: 1.5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.price-container{
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#order-summary{
+border-top: 2px solid rgba(0, 0, 0, 0.3);
+width: 30%;
+display: flex;
+flex-direction: column;
+
+}
+#order-summary *{
+    margin-top: 0.5rem;
+}
+
+#items-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#container-name{
+    margin-left: 70%;
+    margin-bottom: 0.5rem;
+
+}
+
+#code-input-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#apply-button{
+    background-color: #918E8E;
+    color: #ffffff;
+    padding-top:0.5rem ;
+    padding-bottom: 0.5rem;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#code-input{
+    border: none;
+    width: 100%;
+}
+
+#code-question{
+    font-weight: lighter;
+}
+
+#continue-button{
+    background-color: rgba(61, 44, 44, 1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+    font-size: 18px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+#sum-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#total-sum-row{
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+#details{
+    display: flex;
+    flex-direction: row;
+    width: 58%;
+    justify-content: space-evenly;
+    
+}
+
+#details *{
+    margin-bottom: 2.5rem;
+}
+
+.size-dropdown{
+    color:white;
+    background-color: #918E8E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:1.5rem ;
+    width: 1.5rem;
+    
+
+}
+
+.selected-size-container{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:1.5rem ;
+    width: 1.5rem;
+}
+
+.size-dropdown-container{
+    display: flex;
+    flex-direction: row;
 }
