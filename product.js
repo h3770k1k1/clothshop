@@ -14,6 +14,8 @@ function productSiteLoading() {
 
 	const sizeChars = document.querySelectorAll(".size-char");
 	function addToggleChoosenListeners() {
+		item = JSON.parse(sessionStorage.item);
+
 		for (let index = 0; index < sizeChars.length; index++) {
 			$(sizeChars[index]).click(function () {
 				if ($(this).hasClass("available-size")) {
@@ -24,6 +26,10 @@ function productSiteLoading() {
 							char.classList.remove("choosen");
 						});
 						$(this).addClass("choosen");
+						console.log(sizeChars[index].id);
+						console.log(item.choosenSize);
+						item.choosenSize = sizeChars[index].id;
+						console.log(item.choosenSize);
 
 						sizeOptionsContainer.classList.remove("red-background");
 					}
@@ -126,7 +132,7 @@ function productSiteLoading() {
 
 	item = JSON.parse(sessionStorage.item);
 	document.getElementById("product-name").innerText = item.name;
-	document.getElementById("product-price").innerText = item.price;
+	document.getElementById("product-price").innerText = item.price + " PLN";
 
 	const mainPicContainer = document.getElementById("main-pic-container");
 	let mainPic = document.createElement("img");

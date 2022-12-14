@@ -444,6 +444,7 @@ margin-top: 1.5rem;
 
 
 .cart-pic-container{
+
 }
 .details-container{
     border: 1px solid rebeccapurple;
@@ -454,6 +455,7 @@ margin-top: 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: 2px solid red;
 }
 
 .product-name-container{
@@ -583,15 +585,19 @@ flex-direction: column;
 }
 
 .size-dropdown{
-    color:white;
-    background-color: #918E8E;
+    color:rgb(0, 0, 0);
+    background-color: #ffffff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:1.5rem ;
-    width: 1.5rem;
-    
+    position: absolute;
+border: 1px solid black;    
 
+}
+.size-option{
+    padding-top: 0.5rem;
+    cursor: pointer;
 }
 
 .selected-size-container{

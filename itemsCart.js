@@ -1,25 +1,77 @@
-let itemsCart = getCartItems();
-let sum = 0;
 const itemListContainer = $("#items-list-container");
-let itemsCount = 0;
 
 function addItemToCart(item) {
-	itemsCart.push(item);
-	saveItemsCartToStorage();
+	item.id = createUniqueId();
+	item.count = 1;
+	const cartItems = getCartItems();
+	cartItems.push(item);
+	saveItemsCartToStorage(cartItems);
 }
 
 function displayCart() {
 	getCartItems().forEach((item) => {
-		removeButtonAction(itemsCount, item);
-		itemsCount += 1;
-		ubdateItemsCount(itemsCount);
 		const htmlItem = createHtmlCartItem(item);
 		itemListContainer.append(htmlItem);
 	});
+	updateHtmlItemsCount();
+	updateHtmlSum();
+}
+
+function decreaseItemCount(targetItem) {
+	const cartItems = getCartItems();
+	cartItems.find((item) => item.id == targetItem.id).count -= 1;
+	saveItemsCartToStorage(cartItems);
+	updateHtmlItemsCount();
+	updateHtmlSum();
+}
+
+function increaseItemCount(targetItem) {
+	const cartItems = getCartItems();
+	cartItems.find((item) => item.id == targetItem.id).count += 1;
+	saveItemsCartToStorage(cartItems);
+	updateHtmlItemsCount();
+	updateHtmlSum();
+}
+
+function updateHtmlItemsCount() {
+	$("#items-sum").html(getItemsCount() + " items");
+}
+
+function getItemsCount() {
+	let itemsCount = 0;
+	for (const item of getCartItems()) {
+		itemsCount += item.count;
+	}
+	return itemsCount;
+}
+
+function updateHtmlSum() {
+	$("#sum").html(getTotalPrice() + " PLN");
+	$("#total-sum").html(getTotalPrice() + " PLN");
+}
+
+function getTotalPrice() {
+	total = 0.0;
+	for (const item of getCartItems()) {
+		console.log("Item count: " + item.count);
+		count = parseFloat(item.count);
+		price = parseFloat(item.price);
+		total += price * count;
+	}
+	return total.toFixed(2);
+}
+
+function removeItem(itemToRemove) {
+	const cartItems = getCartItems().filter((item) => item.id != itemToRemove.id);
+	updateHtmlItemsCount();
+	saveItemsCartToStorage(cartItems);
+}
+
+function createUniqueId() {
+	return Math.floor(Math.random() * Math.floor(Math.random() * Date.now()));
 }
 
 function createHtmlCartItem(item) {
-	sum += item.price;
 	const htmlItem = $(`<li></li>`);
 	htmlItem.addClass("new-item");
 
@@ -31,27 +83,31 @@ function createHtmlCartItem(item) {
 	mainContainer.addClass("main-container");
 	htmlItem.append(mainContainer);
 
-	const picContainer = $(`<img/>`);
-	picContainer.addClass("cart-pic-container");
-	picContainer.attr("src", item.cartImage);
-	mainContainer.append(picContainer);
+	mainContainer.append(createCartImage(item));
 
 	const productNameContainer = $(`<div>${item.name}</div>`);
 	productNameContainer.addClass("product-name-container");
 	mainContainer.append(productNameContainer);
 
-	const removeButton = $(`<div>remove</div>`);
-	removeButton.addClass("remove-button");
-	productNameContainer.append(removeButton);
+	productNameContainer.append(createRemoveItemButton(item));
+
+	const sizeListContainer = $(`<div></div>`);
+	sizeListContainer.addClass("size-list-container");
 
 	const sizeDropdownContainer = $(`<div></div>`);
 	sizeDropdownContainer.addClass("size-dropdown-container");
 
-	const selectedSizeContainer = $(`<div></div>`);
+	const selectedSizeContainer = $(`<div>${item.choosenSize}</div>`);
 	selectedSizeContainer.addClass("selected-size-container");
 
+	const dropdownButton = $(`<div>v</div>`);
+	dropdownButton.addClass("dropdown-button");
+
 	sizeDropdownContainer.append(selectedSizeContainer);
-	sizeDropdownContainer.append(createSizeDropdown());
+	sizeListContainer.append(dropdownButton);
+	sizeListContainer.append(createSizeDropdown(selectedSizeContainer));
+	sizeDropdownContainer.append(sizeListContainer);
+
 	mainContainer.append(sizeDropdownContainer);
 
 	const quantityContainer = $(`<div></div>`);
@@ -62,10 +118,8 @@ function createHtmlCartItem(item) {
 	subtractButton.addClass("quantity-container-element");
 	quantityContainer.append(subtractButton);
 
-	let productCount = 1;
-
 	let quantity = document.createElement("div");
-	quantity.innerHTML = productCount;
+	quantity.innerHTML = item.count;
 	quantity.classList.add("quantity-container-element");
 	quantityContainer.append(quantity);
 
@@ -74,66 +128,80 @@ function createHtmlCartItem(item) {
 	quantityContainer.append(addButton);
 
 	subtractButton.click(function () {
-		if (productCount != 1) {
-			sum -= item.price;
-			ubdateSum(sum, item);
-			console.log(sum);
-			productCount -= 1;
-			itemsCount -= 1;
-			ubdateItemsCount(itemsCount);
+		if (item.count != 1) {
+			decreaseItemCount(item);
+		} else {
+			$(this).parents(".main-container").remove();
+			removeItem(item);
 		}
-		quantity.innerHTML = productCount;
+		console.log(item);
+		quantity.innerHTML = getRefreshedItem(item).count;
 	});
 
 	addButton.click(function () {
-		productCount += 1;
-		itemsCount += 1;
-		sum += item.price;
-		ubdateSum(sum, item);
-
-		ubdateItemsCount(itemsCount);
-		quantity.innerHTML = productCount;
+		increaseItemCount(item);
+		quantity.innerHTML = getRefreshedItem(item).count;
 	});
-	console.log(itemsCount);
 	const priceContainer = $(`<div>${item.price + " PLN"}</div>`);
 	priceContainer.addClass("price-container");
 	mainContainer.append(priceContainer);
-	ubdateSum(sum, item);
 
 	return htmlItem;
 }
 
-function createSizeDropdown() {
+function getRefreshedItem(item) {
+	return getCartItems().find((i) => i.id == item.id);
+}
+
+function createRemoveItemButton(item) {
+	const removeButton = $(`<div>remove</div>`);
+	removeButton.addClass("remove-button");
+	removeButton.click(function (event) {
+		event.preventDefault();
+		$(this).parents(".main-container").remove();
+		removeItem(item);
+	});
+	return removeButton;
+}
+
+function createCartImage(item) {
+	const picContainer = $(`<img/>`);
+	picContainer.addClass("cart-pic-container");
+	if (item.cartImage) {
+		picContainer.attr("src", item.cartImage);
+	} else {
+		picContainer.attr("src", "resources/default-cart-image.png");
+	}
+	return picContainer;
+}
+
+function createSizeDropdown(container) {
 	item = JSON.parse(sessionStorage.item);
-	const sizeContainer = $("<select size />");
+	const sizeContainer = $("<div></div>");
 
 	sizeContainer.addClass("size-dropdown");
 	const sizes = ["xs", "s", "m", "l", "xl"];
 	sizes.forEach((size) => {
 		if (item[size]) {
-			optText = size;
-			optValue = size;
-			sizeContainer.append(`<option value="${optValue}">${optText}</option>`);
+			let sizeOption = $(`<div>${size}</div>`);
+			sizeOption.addClass("size-option");
+			sizeContainer.append(sizeOption);
+			sizeOption.click(function () {
+				container.html(size);
+				item.choosenSize = size;
+				console.log(item.choosenSize);
+			});
 		}
 	});
 
 	return sizeContainer;
 }
 
-function saveItemsCartToStorage() {
-	sessionStorage.setItem("itemsCart", JSON.stringify(itemsCart));
+function saveItemsCartToStorage(cartItems) {
+	sessionStorage.setItem("itemsCart", JSON.stringify(cartItems));
 }
 
-function removeButtonAction(count, item) {
-	item = JSON.parse(sessionStorage.item);
-
-	$(".remove-button").click(function (event) {
-		event.preventDefault();
-		count -= 1;
-		$(this).parents(".main-container").remove();
-		ubdateItemsCount(count);
-	});
-}
+function removeButtonAction(count, item) {}
 
 function getCartItems() {
 	const items = JSON.parse(sessionStorage.getItem("itemsCart"));
@@ -144,15 +212,4 @@ function addMainContainer(element) {
 	let mainContainer = document.createElement("div");
 	mainContainer.classList.add("main-container");
 	element.appendChild(mainContainer);
-}
-
-function ubdateSum(sum, item) {
-	item = JSON.parse(sessionStorage.item);
-	$("#sum").html(sum + " PLN");
-	$("#total-sum").html(sum + " PLN");
-	console.log(sum);
-}
-
-function ubdateItemsCount(count) {
-	$("#items-sum").html(count + " items");
 }
