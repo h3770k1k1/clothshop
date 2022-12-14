@@ -128,13 +128,12 @@ function createHtmlCartItem(item) {
 	quantityContainer.append(addButton);
 
 	subtractButton.click(function () {
-		if (item.count != 1) {
+		if (getRefreshedItem(item).count != 1) {
 			decreaseItemCount(item);
 		} else {
 			$(this).parents(".main-container").remove();
 			removeItem(item);
 		}
-		console.log(item);
 		quantity.innerHTML = getRefreshedItem(item).count;
 	});
 
