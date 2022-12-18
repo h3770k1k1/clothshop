@@ -125,6 +125,10 @@ const items = [
 	{
 		mainImageSource: "resources/cloth-item (16).png",
 		name: "SCOOBY DOO Y2K SHIRT",
+		croppedImageSource:
+			"resources/319360797_544659824200420_5393446103833115171_n.png",
+		ImageSource1:
+			"resources/318908930_836060047681548_6973202369851168731_n.png",
 		color: "WHITE",
 		price: 19.99,
 		xs: true,

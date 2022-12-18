@@ -1,5 +1,3 @@
-const itemListContainer = $("#items-list-container");
-
 function addItemToCart(item) {
 	item.id = createUniqueId();
 	item.count = 1;
@@ -11,7 +9,7 @@ function addItemToCart(item) {
 function displayCart() {
 	getCartItems().forEach((item) => {
 		const htmlItem = createHtmlCartItem(item);
-		itemListContainer.append(htmlItem);
+		$("#items-list-container").append(htmlItem);
 	});
 	updateHtmlItemsCount();
 	updateHtmlSum();
@@ -63,8 +61,9 @@ function getTotalPrice() {
 
 function removeItem(itemToRemove) {
 	const cartItems = getCartItems().filter((item) => item.id != itemToRemove.id);
-	updateHtmlItemsCount();
 	saveItemsCartToStorage(cartItems);
+	updateHtmlItemsCount();
+	updateHtmlSum();
 }
 
 function createUniqueId() {
@@ -130,11 +129,11 @@ function createHtmlCartItem(item) {
 	subtractButton.click(function () {
 		if (getRefreshedItem(item).count != 1) {
 			decreaseItemCount(item);
+			quantity.innerHTML = getRefreshedItem(item).count;
 		} else {
 			$(this).parents(".main-container").remove();
 			removeItem(item);
 		}
-		quantity.innerHTML = getRefreshedItem(item).count;
 	});
 
 	addButton.click(function () {
