@@ -45,8 +45,8 @@
                             <a href="#">L</a>
                         </div>
                     </div>
-                    <div id="filtr-price-container"><input class="price-input" type="text" placeholder="lowest price"> -
-                        <input class="price-input" type="text" placeholder="highest price">
+                    <div id="filtr-price-container"><input id='lowest-price'class="price-input" type="text" placeholder="lowest price"> -
+                        <input id='highest-price' class="price-input" type="text" placeholder="highest price">
                         <div id="filtr-button">FILTR</div>
                     </div>
                 </div>
@@ -62,9 +62,7 @@
     </div>
     
 </body>
-<script>
-    const currentPage = "bugstarbasics";
-</script>
+
 	<script>
 		$(function () {
 			$("#top-container-placeholder").load("top-container.html");
@@ -76,4 +74,7 @@
 	})
 	;
 	</script><script src="loadItems.js"></script>
+    <script>
+        loadItems("bugstarbasics");
+    </script>
 </html>

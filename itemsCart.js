@@ -211,3 +211,5 @@ function addMainContainer(element) {
 	mainContainer.classList.add("main-container");
 	element.appendChild(mainContainer);
 }
+document.getElementById("shopping-cart-counter").innerHTML =
+	"(" + getItemsCount() + ")";
