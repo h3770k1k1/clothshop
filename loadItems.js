@@ -64,7 +64,6 @@ function loadNewInItem(item, containerName) {
 function appendItemElements(itemDiv, item) {
 	itemDiv.appendChild(seeProductButton(item));
 	itemDiv.appendChild(itemDescription(item));
-
 	itemDiv.appendChild(productColor(item));
 	itemDiv.appendChild(price(item));
 }
@@ -115,9 +114,12 @@ function price(item) {
 	return price;
 }
 
-function filtrPrice() {
+function filtrPrice(item, containerName) {
 	const lowestPrice = document.getElementById("lowest-price");
 	const lowestValue = lowestPrice.value;
-	const highestPrice = document.getElementById("highestt-price");
+	const highestPrice = document.getElementById("highest-price");
 	const highestValue = highestPrice.value;
+	if (item.price < lowestValue) {
+		containerName.parentNode.removeChild();
+	}
 }

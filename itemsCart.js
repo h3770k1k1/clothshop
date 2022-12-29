@@ -70,6 +70,14 @@ function createUniqueId() {
 	return Math.floor(Math.random() * Math.floor(Math.random() * Date.now()));
 }
 
+function toggleVisibility(dropdown) {
+	if ($(dropdown).css("display") == "none") {
+		dropdown.css("display", "block");
+	} else {
+		dropdown.css("display", "none");
+	}
+}
+
 function createHtmlCartItem(item) {
 	const htmlItem = $(`<li></li>`);
 	htmlItem.addClass("new-item");
@@ -89,7 +97,7 @@ function createHtmlCartItem(item) {
 	mainContainer.append(productNameContainer);
 
 	productNameContainer.append(createRemoveItemButton(item));
-
+	const sizeContainer = $("<div></div>");
 	const sizeListContainer = $(`<div></div>`);
 	sizeListContainer.addClass("size-list-container");
 
@@ -104,7 +112,9 @@ function createHtmlCartItem(item) {
 
 	sizeDropdownContainer.append(selectedSizeContainer);
 	sizeListContainer.append(dropdownButton);
-	sizeListContainer.append(createSizeDropdown(selectedSizeContainer));
+	sizeListContainer.append(
+		createSizeDropdown(selectedSizeContainer, sizeContainer, dropdownButton)
+	);
 	sizeDropdownContainer.append(sizeListContainer);
 
 	mainContainer.append(sizeDropdownContainer);
@@ -173,9 +183,8 @@ function createCartImage(item) {
 	return picContainer;
 }
 
-function createSizeDropdown(container) {
+function createSizeDropdown(container, sizeContainer, button) {
 	item = JSON.parse(sessionStorage.item);
-	const sizeContainer = $("<div></div>");
 
 	sizeContainer.addClass("size-dropdown");
 	const sizes = ["xs", "s", "m", "l", "xl"];
@@ -188,8 +197,12 @@ function createSizeDropdown(container) {
 				container.html(size);
 				item.choosenSize = size;
 				console.log(item.choosenSize);
+				toggleVisibility(sizeContainer);
 			});
 		}
+	});
+	button.click(function () {
+		toggleVisibility(sizeContainer);
 	});
 
 	return sizeContainer;
@@ -213,3 +226,8 @@ function addMainContainer(element) {
 }
 document.getElementById("shopping-cart-counter").innerHTML =
 	"(" + getItemsCount() + ")";
+
+if (document.getElementById("items-list-container").innerText == "") {
+	document.getElementById("items-list-container").innerHTML =
+		"Your bag is empty";
+}
