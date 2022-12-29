@@ -136,7 +136,12 @@ function productSiteLoading() {
 
 	const mainPicContainer = document.getElementById("main-pic-container");
 	let mainPic = document.createElement("img");
-	mainPic.src = item.croppedImageSource;
+	if (item.croppedImageSource) {
+		mainPic.src = item.croppedImageSource;
+	} else {
+		mainPic.src = "resources/cropped-default-image.png";
+	}
+
 	mainPic.classList.add("main-pic");
 	mainPicContainer.appendChild(mainPic);
 
@@ -144,15 +149,28 @@ function productSiteLoading() {
 
 	const productPic1 = document.createElement("img");
 	productPic1.classList.add("product-pic");
-	productPic1.src = item.ImageSource1;
+	if (item.ImageSource1) {
+		productPic1.src = item.ImageSource1;
+	} else {
+		productPic1.src = "resources/default-product-image.png";
+	}
 
 	const productPic2 = document.createElement("img");
 	productPic2.classList.add("product-pic");
-	productPic2.src = item.ImageSource2;
+	if (item.ImageSource2) {
+		productPic2.src = item.ImageSource2;
+	} else {
+		productPic2.src = "resources/default-product-image.png";
+	}
 
 	const productPic3 = document.createElement("img");
 	productPic3.classList.add("product-pic");
-	productPic3.src = item.ImageSource3;
+
+	if (item.ImageSource3) {
+		productPic3.src = item.ImageSource3;
+	} else {
+		productPic3.src = "resources/default-product-image.png";
+	}
 
 	picsContainer.appendChild(productPic1);
 	picsContainer.appendChild(productPic2);
