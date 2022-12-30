@@ -66,6 +66,9 @@ function productSiteLoading() {
 	const continueShoppingButton = document.createElement("div");
 	continueShoppingButton.innerHTML = "Continue shopping";
 	continueShoppingButton.classList.add("notification-button");
+	continueShoppingButton.addEventListener("click", function () {
+		history.back();
+	});
 
 	const myBagLink = document.createElement("a");
 	myBagLink.setAttribute("href", "mybag.html");

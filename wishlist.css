@@ -16,6 +16,7 @@ body {
 #bottom-hr {
     background-color:  rgba(0, 0, 0, 0.3);
     width: 75%;
+    height: 1px;
     display: flex;
     align-self: center;
     position: absolute;

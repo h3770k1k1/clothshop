@@ -215,7 +215,7 @@ function saveItemsCartToStorage(cartItems) {
 function removeButtonAction(count, item) {}
 
 function getCartItems() {
-	const items = JSON.parse(sessionStorage.getItem("itemsCart"));
+	let items = JSON.parse(sessionStorage.getItem("itemsCart"));
 	return items ? items : [];
 }
 

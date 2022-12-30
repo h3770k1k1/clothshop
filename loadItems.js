@@ -31,23 +31,99 @@ function addItemsCount(itemsCountContainerName, items) {
 	itemsCountContainer.innerText = items.length + " items";
 }
 
-function loadBasicsItem(item, containerName, counter) {
+function loadBasicsItem(item, containerName) {
 	if (item.basics == true) {
-		counter += 1;
 		const itemsContainer = document.getElementById(containerName);
 		const itemDiv = document.createElement("div");
 		itemDiv.classList.add("cloth-item");
 		appendItemElements(itemDiv, item);
-		itemsContainer.appendChild(itemDiv);
+		//filtr items by price
+		const filtrButton = document.getElementById("filtr-button");
+		filtrButton.addEventListener("click", function () {
+			if (
+				document.getElementById("lowest-price").value == "" &&
+				document.getElementById("highest-price").value == ""
+			) {
+				window.location.reload();
+			} else {
+				if (item.price < document.getElementById("lowest-price").value) {
+					console.log(item.price);
+					itemsContainer.removeChild(itemDiv);
+				}
+				if (item.price > document.getElementById("highest-price").value) {
+					console.log(item.price);
+					itemsContainer.removeChild(itemDiv);
+				}
+			}
+		});
+		//
+		if (
+			document.getElementById("lowest-price").value == "" &&
+			document.getElementById("highest-price").value == ""
+		) {
+			//
+			itemsContainer.appendChild(itemDiv);
+		}
+		//filtr by size
+		const sizeFiltrOptions = document.querySelectorAll(".size-option");
+		for (let index = 0; index < sizeFiltrOptions.length; index++) {
+			sizeFiltrOptions[index].addEventListener("click", function () {
+				console.log(sizeFiltrOptions[index].id);
+				if (item[sizeFiltrOptions[index].id] == false) {
+					itemsContainer.removeChild(itemDiv);
+				} else {
+					itemsContainer.appendChild(itemDiv);
+				}
+			});
+		} //
 	}
 }
+
 function loadTshirtsItem(item, containerName) {
 	if (item.tshirts == true) {
 		const itemsContainer = document.getElementById(containerName);
 		const itemDiv = document.createElement("div");
 		itemDiv.classList.add("cloth-item");
 		appendItemElements(itemDiv, item);
-		itemsContainer.appendChild(itemDiv);
+		//filtr items by price
+		const filtrButton = document.getElementById("filtr-button");
+		filtrButton.addEventListener("click", function () {
+			if (
+				document.getElementById("lowest-price").value == "" &&
+				document.getElementById("highest-price").value == ""
+			) {
+				window.location.reload();
+			} else {
+				if (item.price < document.getElementById("lowest-price").value) {
+					console.log(item.price);
+					itemsContainer.removeChild(itemDiv);
+				}
+				if (item.price > document.getElementById("highest-price").value) {
+					console.log(item.price);
+					itemsContainer.removeChild(itemDiv);
+				}
+			}
+		});
+		//
+		if (
+			document.getElementById("lowest-price").value == "" &&
+			document.getElementById("highest-price").value == ""
+		) {
+			//
+			itemsContainer.appendChild(itemDiv);
+		}
+		//filtr by size
+		const sizeFiltrOptions = document.querySelectorAll(".size-option");
+		for (let index = 0; index < sizeFiltrOptions.length; index++) {
+			sizeFiltrOptions[index].addEventListener("click", function () {
+				console.log(sizeFiltrOptions[index].id);
+				if (item[sizeFiltrOptions[index].id] == false) {
+					itemsContainer.removeChild(itemDiv);
+				} else {
+					itemsContainer.appendChild(itemDiv);
+				}
+			});
+		} //
 	}
 }
 
@@ -114,12 +190,6 @@ function price(item) {
 	return price;
 }
 
-function filtrPrice(item, containerName) {
-	const lowestPrice = document.getElementById("lowest-price");
-	const lowestValue = lowestPrice.value;
-	const highestPrice = document.getElementById("highest-price");
-	const highestValue = highestPrice.value;
-	if (item.price < lowestValue) {
-		containerName.parentNode.removeChild();
-	}
-}
+document.getElementById("reset-filters").addEventListener("click", function () {
+	window.location.reload();
+});

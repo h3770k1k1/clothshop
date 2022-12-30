@@ -31,7 +31,7 @@
                 </div>
                 <div id="filtr-container">
                     <div id="dropdown">
-                        <div id="dropdown-text">Size</div>
+                        <div id="dropdown-text">Filtr by size</div>
                         <button id="dropbtn"><svg id="dropbtn-svg" width="14" height="8" viewBox="0 0 14 8" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L7 7L13 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -40,14 +40,17 @@
 
                         </button>
                         <div id="dropdown-content">
-                            <a href="#">S</a>
-                            <a href="#">M</a>
-                            <a href="#">L</a>
+                            <a id='xs' class="size-option" href="#">XS</a>
+                            <a id='s' class="size-option" href="#">S</a>
+                            <a id='m' class="size-option" href="#">M</a>
+                            <a id='l' class="size-option" href="#">L</a>
+                            <a id='xl' class="size-option" href="#">XL</a>
                         </div>
                     </div>
                     <div id="filtr-price-container"><input id='lowest-price'class="price-input" type="text" placeholder="lowest price"> -
                         <input id='highest-price' class="price-input" type="text" placeholder="highest price">
                         <div id="filtr-button">FILTR</div>
+                        <div id="reset-filters">reset all filters</div>
                     </div>
                 </div>
             </div>
