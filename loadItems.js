@@ -156,7 +156,6 @@ function seeProductButton(item) {
 	//seeProductButton.classList.add("see-product-button");
 	//seeProductButton.innerText = "SEE PRODUCT";
 	//a.appendChild(seeProductButton);
-
 	return a;
 }
 function itemDescription(item) {
